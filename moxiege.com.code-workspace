@@ -1,0 +1,26 @@
+{
+    "folders": [
+        {
+            "path": "./",
+            "name": "Root"
+        },
+        {
+            "path": "./moxiege.com",
+            "name": "Website"
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/.git": true,
+            "**/.svn": true,
+            "**/.hg": true,
+            "**/CVS": true,
+            "**/.DS_Store": true,
+            "**/Thumbs.db": true,
+            "moxiege.com/": true,
+            ".devenv/":true,
+            ".direnv/":true,
+            ".envrc":true
+        }
+    }
+}
