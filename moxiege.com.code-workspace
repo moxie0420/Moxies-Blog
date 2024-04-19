@@ -3,6 +3,14 @@
     {
       "path": "./",
       "name": "Root"
+    },
+    {
+      "path": "./src",
+      "name": "Source"
+    },
+    {
+      "path": "./src/public",
+      "name": "Assets"
     }
   ],
   "settings": {
@@ -15,11 +23,13 @@
       "**/Thumbs.db": true,
       ".devenv/": true,
       ".direnv/": true,
+      "src/": true,
+      "public/": true,
       ".envrc": true,
       "package-lock.json": true,
       "flake.lock": true
     },
-    "[json][jsonc][yaml][typescriptreact]": {
+    "[json][jsonc][yaml][typescript][javascript]": {
       "editor.tabSize": 2,
       "editor.formatOnSave": true,
       "editor.formatOnPaste": false,
