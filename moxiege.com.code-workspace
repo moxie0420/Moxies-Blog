@@ -1,26 +1,86 @@
 {
-    "folders": [
-        {
-            "path": "./",
-            "name": "Root"
-        },
-        {
-            "path": "./moxiege.com",
-            "name": "Website"
-        }
-    ],
-    "settings": {
-        "files.exclude": {
-            "**/.git": true,
-            "**/.svn": true,
-            "**/.hg": true,
-            "**/CVS": true,
-            "**/.DS_Store": true,
-            "**/Thumbs.db": true,
-            "moxiege.com/": true,
-            ".devenv/":true,
-            ".direnv/":true,
-            ".envrc":true
-        }
+  "folders": [
+    {
+      "path": "./",
+      "name": "Root"
+    },
+    {
+      "path": "./moxiege.com",
+      "name": "Website"
     }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.git": true,
+      "**/.svn": true,
+      "**/.hg": true,
+      "**/CVS": true,
+      "**/.DS_Store": true,
+      "**/Thumbs.db": true,
+      "moxiege.com/": true,
+      ".devenv/": true,
+      ".direnv/": true,
+      ".envrc": true
+    },
+    "[json][jsonc][yaml]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": false,
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "typescript.enablePromptUseWorkspaceTsdk": true,
+    "typescript.preferences.preferTypeOnlyAutoImports": true
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Project wide type checking with TypeScript",
+        "type": "npm",
+        "script": "check-types",
+        "problemMatcher": ["$tsc"],
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        },
+        "presentation": {
+          "clear": true,
+          "reveal": "never"
+        }
+      }
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Next.js: debug server-side",
+        "type": "node-terminal",
+        "request": "launch",
+        "command": "npm run dev"
+      },
+      {
+        "name": "Next.js: debug client-side",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:3000"
+      },
+      {
+        "name": "Next.js: debug full stack",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/node_modules/.bin/next",
+        "runtimeArgs": ["--inspect"],
+        "skipFiles": ["<node_internals>/**"],
+        "serverReadyAction": {
+          "action": "debugWithEdge",
+          "killOnServerStop": true,
+          "pattern": "- Local:.+(https?://.+)",
+          "uriFormat": "%s",
+          "webRoot": "${workspaceFolder}"
+        }
+      }
+    ],
+    "compounds": []
+  }
 }
