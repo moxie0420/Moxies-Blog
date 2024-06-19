@@ -39,7 +39,7 @@
 
           languages.javascript = {
             enable = true;
-            bun.enable = false;
+            bun.enable = true;
             npm = {
               enable = true;
               package = pkgs.nodePackages_latest.nodejs;
@@ -49,18 +49,15 @@
           # This is your devenv configuration
           packages = with pkgs; [
             nodePackages_latest.prettier
-            nodePackages_latest.npm
-            openssl
-            ngrok
           ];
 
           scripts = {
-            run.exec = "npm run dev";
+            run.exec = "bun --bun run dev";
             setup.exec = ''
-              npm i
+              bun i
             '';
             build.exec = ''
-              npx next build
+              
             '';
           };
         })
