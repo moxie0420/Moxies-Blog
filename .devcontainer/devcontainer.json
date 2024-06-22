@@ -43,6 +43,10 @@
         ]
       }
     },
+
+    "features": {
+      "ghcr.io/prulloac/devcontainer-features/bun:1": {}
+    },
   
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     "forwardPorts": [3000]

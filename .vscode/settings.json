@@ -1,0 +1,11 @@
+{
+  "workbench.iconTheme": "catppuccin-perfect-mocha",
+  "prettier.eslintIntegration": true,
+  "prettier.configPath": ".prettierrc",
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "scss.lint.unknownAtRules": "ignore",
+  "editor.defaultFormatter": "svipas.prettier-plus",
+  "eslint.format.enable": true,
+  "prettier.useEditorConfig": false
+}
