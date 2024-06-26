@@ -45,11 +45,11 @@
     },
 
     "features": {
-      "ghcr.io/prulloac/devcontainer-features/bun:1": {}
+      "ghcr.io/devcontainers/features/node:1": {}
     },
   
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    "forwardPorts": [3000]
+    "forwardPorts": [4321]
   
     // Use 'postCreateCommand' to run commands after the container is created.
     // "postCreateCommand": "go version",
