@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "./Layout.astro";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+    <Image
+        width="300"
+        height="259"
+        alt="RaccoonLaptopGif"
+        src="/laptop.webp"
+        class="mx-auto"
+        loading="eager"
+        class="font-bold text-6xl">{frontmatter.title}</Image
+    >
+    <h2 class="font-bold text-6xl p-5">{frontmatter.title}</h2>
+    <slot />
+
+    <div class="grid grid-cols-2 w-1/4 mx-auto">
+        <p>PLATFORM </p>{frontmatter.platform}
+        <p>STACK WEBSITE </p>{frontmatter.stack}
+        <p>GITHUB </p>{frontmatter.github}
+    </div>
+
+    <div class="mx-auto grid grid-cols-2 gap-5 p-5">
+        <Image
+            class="size-full rounded-md"
+            width="500"
+            height="281"
+            src={frontmatter.worksImage1.url}
+            alt={frontmatter.worksImage1.alt}
+        />
+        <Image
+            class="size-full rounded-md"
+            width="500"
+            height="281"
+            src={frontmatter.worksImage2.url}
+            alt={frontmatter.worksImage2.alt}
+        />
+    </div>
+</BaseLayout>

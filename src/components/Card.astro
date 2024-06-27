@@ -1,0 +1,14 @@
+---
+import { Image } from "astro:assets";
+
+const { image, title, url, body } = Astro.props;
+---
+<a href={url} class="break-inside-avoid-column">
+    <div class="m-3 break-inside-avoid-column bg-milky-50 text-milky-100 border border-milky-100 rounded-lg shadow flex flex-col max-w-2xl">
+        <img src={image} class="rounded-t-lg max-h-2/3" />
+        <div class="basis-1/3">
+            <h1 class="font-bold text-5xl mb-5">{title}</h1>
+            <p>{body}</p>
+        </div>
+    </div>
+</a>

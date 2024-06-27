@@ -1,0 +1,6 @@
+{
+    "remote.autoForwardPortsSource": "hybrid",
+    "[mdx]": {
+        "editor.defaultFormatter": "unifiedjs.vscode-mdx"
+    }
+}

@@ -1,0 +1,38 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "@layouts/Layout.astro";
+import Card from "@components/Card.astro";
+import { Image } from "astro:assets";
+
+const allProjects = await getCollection("projects");
+const pageTitle = "Works";
+---
+
+<Layout pageTitle={pageTitle}>
+    <Image
+        width="300"
+        height="259"
+        alt="RaccoonLaptopGif"
+        src="/laptop.webp"
+        class="mx-auto"
+        loading="eager"
+    />
+    <h2
+        class="font-sans underline underline-offset-4 text-5xl decoration-milky-300 mb-10 font-bold"
+    >
+        Projects
+    </h2>
+
+    <div class="columns-3 gap-3 mx-auto break-after-column h-full">
+        {
+            allProjects.map((card) => (
+                <Card
+                    url={`/projects/${card.slug}/`}
+                    image={card.data.image.url}
+                    title={card.data.title}
+                    body={card.data.description}
+                />
+            ))
+        }
+    </div>
+</Layout>

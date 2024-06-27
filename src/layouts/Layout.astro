@@ -1,0 +1,35 @@
+---
+import "@fontsource/pacifico";
+import "@fontsource-variable/josefin-sans";
+
+import { ViewTransitions } from "astro:transitions";
+import { fade } from "astro:transitions";
+
+import Header from "../components/Header.astro";
+import Clouds from "../components/Clouds.astro";
+
+const { pageTitle } = Astro.props;
+---
+
+<!doctype html>
+<html transition:animate="none" lang="en" class="rounded-md">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="Astro description" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pageTitle}</title>
+        <ViewTransitions />
+    </head>
+
+    <body class="w-11/12 mx-auto p-5">
+        <Header />
+        <main
+            class="bg-milky-400 border-milky-100 border-2 text-milky-100 text-center gap-5 h-screen mt-5 rounded-md"
+            transition:animate={fade({ duration: "0.2s" })}
+        >
+            <slot />
+        </main>
+        <Clouds />
+    </body>
+</html>

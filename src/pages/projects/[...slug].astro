@@ -1,0 +1,21 @@
+---
+import { getEntry } from "astro:content";
+import MarkdownWorksLayout from "../../layouts/MarkdownWorksLayout.astro";
+
+const { slug } = Astro.params;
+if (slug === undefined) {
+  throw new Error("Slug is required");
+}
+
+const entry = await getEntry("projects", slug);
+
+if (entry === undefined) {
+  return Astro.redirect("/404");
+}
+
+const { Content } = await entry.render();
+---
+
+<MarkdownWorksLayout frontmatter={entry.data}>
+    <Content />
+</MarkdownWorksLayout>

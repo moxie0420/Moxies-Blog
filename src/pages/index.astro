@@ -1,16 +1,137 @@
 ---
+import { Image } from "astro:assets";
+import { Button } from "@nextui-org/react";
+import Layout from "@layouts/Layout.astro";
 
+const pageTitle = "Moxies Portfolio and blog";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout pageTitle={pageTitle}>
+    <div
+        class="bg-milky-400 border-milky-100 border-2 text-milky-100 p-3 grid grid-cols-1 text-center gap-5"
+    >
+        <div class="grid grid-cols-2 justify-between mx-auto">
+            <div class="content-center">
+                <h1 class="font-sans mb-5 text-5xl">Moxie Benavides</h1>
+                <span
+                    class="bg-milky-400 text-milky-100 shadow shadow-milky-50 font-serif p-2 rounded-lg font-bold"
+                    >Digital Craftsman (Developer)</span
+                >
+            </div>
+
+            <Image
+                loading="eager"
+                width="300"
+                height="259"
+                alt="RaccoonSpaceGif"
+                src="/space.webp"
+            />
+        </div>
+
+        <h2
+            class="font-sans underline underline-offset-4 text-4xl decoration-milky-300 mb-2"
+        >
+            About
+        </h2>
+
+        <p
+            class="font-serif text-lg hyphens-auto leading-normal text-balance indent-1"
+        >
+            Praesent malesuada mi nisi, quis tempus magna venenatis ut.
+            Suspendisse tempor sem at scelerisque congue. Curabitur mollis, mi
+            id molestie finibus, metus sem sagittis nunc, euismod feugiat orci
+            neque non lorem. Aenean sollicitudin erat eu molestie tempus. Nunc
+            ac eros elementum, fermentum lacus at, pellentesque mauris.
+            Suspendisse eros neque, interdum euismod consectetur convallis,
+            porttitor at massa. Phasellus a ultrices arcu. Donec viverra, lorem
+            in pellentesque euismod, libero justo gravida nibh, non ultricies
+            justo purus ultrices est.
+        </p>
+
+        <p
+            class="font-serif text-lg hyphens-auto leading-normal text-balance indent-1"
+        >
+            Ut at interdum dui. Donec ut ante ex. Maecenas id ex eget nibh
+            consequat accumsan. Proin semper semper dui nec feugiat. Donec
+            cursus neque id aliquet finibus. Morbi facilisis turpis nibh, nec
+            dictum orci dictum nec. In hac habitasse platea dictumst. Maecenas
+            mollis turpis vitae turpis bibendum, vitae tristique arcu eleifend.
+        </p>
+
+        <a href="/works/">
+            <Button
+                className="border-milky-200 text-milky-200"
+                variant="bordered"
+            >
+                My portfolio
+            </Button>
+        </a>
+
+        <h2
+            class="font-sans underline underline-offset-4 text-4xl decoration-milky-300 mb-2"
+        >
+            Skills
+        </h2>
+
+        <div class="flex gap-1 m-2 mx-auto">
+            <Image
+                loading="eager"
+                width="46"
+                height="46"
+                alt="C#"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+            />
+            <Image
+                loading="eager"
+                width="46"
+                height="46"
+                alt="TypeScript"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+            />
+            <Image
+                loading="eager"
+                width="46"
+                height="46"
+                alt="CSS"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+            />
+            <Image
+                loading="eager"
+                width="46"
+                height="46"
+                alt="HTML"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+            />
+            <Image
+                loading="eager"
+                width="46"
+                height="46"
+                alt="JavaScript"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+            />
+            <Image
+                loading="eager"
+                width="46"
+                height="46"
+                alt="Git"
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+            />
+        </div>
+
+        <h2
+            class="font-sans underline underline-offset-4 text-4xl decoration-milky-300 mb-2"
+        >
+            Interests
+        </h2>
+
+        <p
+            class="font-serif text-lg hyphens-auto leading-normal text-balance indent-1"
+        >
+            Ut at interdum dui. Donec ut ante ex. Maecenas id ex eget nibh
+            consequat accumsan. Proin semper semper dui nec feugiat. Donec
+            cursus neque id aliquet finibus. Morbi facilisis turpis nibh, nec
+            dictum orci dictum nec. In hac habitasse platea dictumst. Maecenas
+            mollis turpis vitae turpis bibendum, vitae tristique arcu eleifend.
+        </p>
+    </div>
+</Layout>

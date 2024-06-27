@@ -1,0 +1,20 @@
+---
+const description = "404";
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
+---
+
+<Layout>
+    <div class="bg-milky-400 border-milky-100 border-2">
+        <div class="flex flex-col mx-auto items-center">
+            <img width="300" height="259" alt="Raccoon404Gif" src="/404.webp" />
+            <h1 class="lost__header">{description}</h1>
+            <p class="lost__body">
+                It seems like you've wandered into the wrong forest!
+            </p>
+            <p>
+                <a class="lost__link" href="/">Return Home</a>
+            </p>
+        </div>
+    </div>
+</Layout>
