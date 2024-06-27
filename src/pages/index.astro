@@ -1,15 +1,14 @@
 ---
 import { Image } from "astro:assets";
 import { Button } from "@nextui-org/react";
+import Skills from "@components/Skills.astro";
 import Layout from "@layouts/Layout.astro";
 
 const pageTitle = "Moxies Portfolio and blog";
 ---
 
 <Layout pageTitle={pageTitle}>
-    <div
-        class="bg-milky-400 border-milky-100 border-2 text-milky-100 p-3 grid grid-cols-1 text-center gap-5"
-    >
+    <div class="grid gap-5">
         <div class="grid grid-cols-2 justify-between mx-auto">
             <div class="content-center">
                 <h1 class="font-sans mb-5 text-5xl">Moxie Benavides</h1>
@@ -31,31 +30,16 @@ const pageTitle = "Moxies Portfolio and blog";
         <h2
             class="font-sans underline underline-offset-4 text-4xl decoration-milky-300 mb-2"
         >
-            About
+            About Me
         </h2>
 
         <p
-            class="font-serif text-lg hyphens-auto leading-normal text-balance indent-1"
+            class="font-serif text-xl hyphens-auto leading-normal text-balance indent-1 w-1/2 mx-auto"
         >
-            Praesent malesuada mi nisi, quis tempus magna venenatis ut.
-            Suspendisse tempor sem at scelerisque congue. Curabitur mollis, mi
-            id molestie finibus, metus sem sagittis nunc, euismod feugiat orci
-            neque non lorem. Aenean sollicitudin erat eu molestie tempus. Nunc
-            ac eros elementum, fermentum lacus at, pellentesque mauris.
-            Suspendisse eros neque, interdum euismod consectetur convallis,
-            porttitor at massa. Phasellus a ultrices arcu. Donec viverra, lorem
-            in pellentesque euismod, libero justo gravida nibh, non ultricies
-            justo purus ultrices est.
-        </p>
-
-        <p
-            class="font-serif text-lg hyphens-auto leading-normal text-balance indent-1"
-        >
-            Ut at interdum dui. Donec ut ante ex. Maecenas id ex eget nibh
-            consequat accumsan. Proin semper semper dui nec feugiat. Donec
-            cursus neque id aliquet finibus. Morbi facilisis turpis nibh, nec
-            dictum orci dictum nec. In hac habitasse platea dictumst. Maecenas
-            mollis turpis vitae turpis bibendum, vitae tristique arcu eleifend.
+        Howdy, y'all, my name is Moxie, and I'm a College student at UTSA studying Cyber Security.
+        I plan to use this website to talk about my projects and whatever else catches my interest.
+        While I've just started my progress, I hope to make this the first in many projects.
+        Feel free to check my portfolio to check my progress
         </p>
 
         <a href="/works/">
@@ -68,55 +52,12 @@ const pageTitle = "Moxies Portfolio and blog";
         </a>
 
         <h2
-            class="font-sans underline underline-offset-4 text-4xl decoration-milky-300 mb-2"
+            class="font-sans underline underline-offset-4 text-4xl decoration-milky-300 mx-2 mt-3"
         >
             Skills
         </h2>
-
-        <div class="flex gap-1 m-2 mx-auto">
-            <Image
-                loading="eager"
-                width="46"
-                height="46"
-                alt="C#"
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
-            />
-            <Image
-                loading="eager"
-                width="46"
-                height="46"
-                alt="TypeScript"
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
-            />
-            <Image
-                loading="eager"
-                width="46"
-                height="46"
-                alt="CSS"
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-            />
-            <Image
-                loading="eager"
-                width="46"
-                height="46"
-                alt="HTML"
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
-            />
-            <Image
-                loading="eager"
-                width="46"
-                height="46"
-                alt="JavaScript"
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
-            />
-            <Image
-                loading="eager"
-                width="46"
-                height="46"
-                alt="Git"
-                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
-            />
-        </div>
+        <Skills />
+        
 
         <h2
             class="font-sans underline underline-offset-4 text-4xl decoration-milky-300 mb-2"
@@ -125,13 +66,10 @@ const pageTitle = "Moxies Portfolio and blog";
         </h2>
 
         <p
-            class="font-serif text-lg hyphens-auto leading-normal text-balance indent-1"
+            class="font-serif text-xl hyphens-auto leading-normal text-balance indent-1 w-1/2 mx-auto"
         >
-            Ut at interdum dui. Donec ut ante ex. Maecenas id ex eget nibh
-            consequat accumsan. Proin semper semper dui nec feugiat. Donec
-            cursus neque id aliquet finibus. Morbi facilisis turpis nibh, nec
-            dictum orci dictum nec. In hac habitasse platea dictumst. Maecenas
-            mollis turpis vitae turpis bibendum, vitae tristique arcu eleifend.
+        I'm Primarily interested in Computer programming and video games. My favorite games include A Hat in Time,
+        Cyberpunk 2077, Deadcells, and Risk of Rain 2.  I am also Currently in the process of making a game. As development progresses I will post updates
         </p>
     </div>
 </Layout>
