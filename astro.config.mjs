@@ -5,16 +5,14 @@ import mdx from "@astrojs/mdx";
 import remarkToc from 'remark-toc';
 import tailwind from "@astrojs/tailwind";
 import vue from "@astrojs/vue";
-
 import robotsTxt from "astro-robots-txt";
+
+import pageInsight from "astro-page-insight";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.moxiege.com",
   output: "server",
-  image: {
-    service: passthroughImageService()
-  },
   adapter: cloudflare({
     platformProxy: {
       enabled: true
@@ -27,5 +25,5 @@ export default defineConfig({
     },
     remarkPlugins: [remarkToc],
     gfm: false
-  }), tailwind(), vue(), robotsTxt()]
+  }), tailwind(), vue(), robotsTxt(), pageInsight()]
 });
