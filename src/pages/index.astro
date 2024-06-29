@@ -8,8 +8,8 @@ const pageTitle = "Moxies Portfolio and blog";
 ---
 
 <Layout pageTitle={pageTitle}>
-    <div class="grid gap-2 sm:gap-3 lg:gap-4 text-milky-100 font-serif">
-        <div class="flex flex-col sm:flex-row font-serif w-fit mx-auto">
+    <div class="grid gap-2 sm:gap-3 lg:gap-4">
+        <div class="grid sm:grid-cols-2 font-serif mx-auto content-center">
             <div class="mx-auto content-center">
                 <h1 class="font-sans mb-2 text-xl sm:text-5xl lg:text-6xl">
                     Moxie Benavides
@@ -23,11 +23,11 @@ const pageTitle = "Moxies Portfolio and blog";
 
             <Image
                 loading="eager"
-                width="300"
-                height="259"
+                inferSize
                 alt="RaccoonSpaceGif"
-                src="/space.webp"
-                class="mx-auto"
+                src="https://content.moxiege.com/public%2Fspace.webp"
+                densities={[1.0,1.5,2]}
+                class=""
             />
         </div>
 
@@ -38,7 +38,7 @@ const pageTitle = "Moxies Portfolio and blog";
         </h2>
 
         <p
-            class="text-xl lg:text-3xl 2xl:text-4xl hyphens-auto leading-normal text-balance indent-1 sm:w-3/4 3xl:w-1/2 mx-auto font-serif"
+            class="text-xl lg:text-3xl 2xl:text-4xl text-balance sm:w-3/4 3xl:w-1/2 mx-auto font-serif"
         >
             Howdy, y'all, my name is Moxie, and I'm a College student at UTSA
             studying Cyber Security. I plan to use this website to talk about my
@@ -49,7 +49,7 @@ const pageTitle = "Moxies Portfolio and blog";
 
         <a href="/works/">
             <Button
-                className="border-milky-200 text-milky-200"
+                className="border-milky-200 text-milky-100 bg-milky-300"
                 variant="bordered"
                 size="lg"
             >
@@ -72,7 +72,7 @@ const pageTitle = "Moxies Portfolio and blog";
         </h2>
 
         <p
-            class="text-xl lg:text-3xl 2xl:text-4xl hyphens-auto leading-normal text-balance indent-1 sm:w-2/3 3xl:w-1/2 mx-auto font-serif"
+            class="text-xl lg:text-3xl 2xl:text-4xl text-balance sm:w-2/3 3xl:w-1/2 mx-auto font-serif"
         >
             I'm Primarily interested in Computer programming and video games. My
             favorite games include A Hat in Time, Cyberpunk 2077, Deadcells, and

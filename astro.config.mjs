@@ -1,23 +1,23 @@
-import { defineConfig, passthroughImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
 import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
 import remarkToc from "remark-toc";
 import tailwind from "@astrojs/tailwind";
-import vue from "@astrojs/vue";
 import robotsTxt from "astro-robots-txt";
-
-import pageInsight from "astro-page-insight";
+import playformCompress from "@playform/compress";
+import playformInline from "@playform/inline";
+import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.moxiege.com",
-  output: "server",
+  output: "hybrid",
   image: {
-    domains: ["content.moxiege.com"],
+    domains: ["moxiege.com"],
   },
   adapter: cloudflare({
-    imageService: "passthrough",
+    imageService: "cloudflare",
     platformProxy: {
       enabled: true,
     },
@@ -33,8 +33,11 @@ export default defineConfig({
       gfm: false,
     }),
     tailwind(),
-    vue(),
     robotsTxt(),
-    pageInsight(),
+    playformCompress({
+      Image: false,
+    }),
+    playformInline(),
+    partytown(),
   ],
 });

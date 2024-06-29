@@ -23,14 +23,15 @@ const { pageTitle } = Astro.props;
     <ViewTransitions />
   </head>
 
-  <body class="flex flex-col sm:mx-auto p-3 sm:p-4 h-fit">
+  <body class="flex flex-col sm:mx-auto p-3 sm:p-4 gap-7">
     <Header />
     <main
-      class="bg-milky-400 border-milky-100 border-2 text-milky-100 text-center h-full mt-5 rounded-md p-1"
+      class="bg-milky-400 border-milky-100 border-2 text-milky-100 text-center p-2 rounded-md"
       transition:animate={fade({ duration: "0.2s" })}
     >
       <slot />
     </main>
-    <Clouds />
+    
   </body>
+  <Clouds />
 </html>

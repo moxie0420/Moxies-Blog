@@ -2,6 +2,10 @@
 /// <reference types="astro/client" />
 
 interface Window {
-    particlesInit(Engine): Promise<void>;
-    particlesLoaded(Container): void;
+  particlesInit(Engine): Promise<void>;
+  particlesLoaded(Container): void;
+}
+
+interface Env {
+  cloud_assets: R2Bucket;
 }

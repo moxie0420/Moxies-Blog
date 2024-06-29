@@ -17,14 +17,14 @@ const options: ISourceOptions = {
             enable: true,
             direction: "bottom",
             outModes: "out",
-            speed: 2,
+            speed: 1.6,
         },
         number: {
             density: {
                 enable: true,
                 area: 800,
             },
-            value: 400,
+            value: 250,
         },
         opacity: {
             value: 0.7,
@@ -49,16 +49,15 @@ const options: ISourceOptions = {
 
 <script>
     import {
-        type Container,
         type Engine,
     } from "tsparticles-engine";
-    import { loadFull } from "tsparticles";
+    import { loadSlim } from "tsparticles-slim";
 
     // the function name is the parameter passed to the init attribute
     // required
     // add the function to window is mandatory, it will be searched there
     window.particlesInit = async function (engine: Engine) {
-        await loadFull(engine);
+        await loadSlim(engine);
     };
 
     // the function name is the parameter passed to the loaded attribute
@@ -68,4 +67,4 @@ const options: ISourceOptions = {
     };
 </script>
 
-<Particles id="tsparticles" options={options} init="particlesInit" class="isolate absolute"/>
+<Particles id="tsparticles" options={options} init="particlesInit" transition:persist/>

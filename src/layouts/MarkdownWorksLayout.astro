@@ -40,7 +40,7 @@ const { frontmatter } = Astro.props;
       </div>
     </div>
 
-    <div class="bg mx-auto my-auto border-2 rounded-sm grid gap-9 w-3/4">
+    <div class="bg-obsidian bg-[96px] bg-repeat mx-auto my-auto border-2 rounded-sm grid gap-9 w-3/4">
       <div class="py-6 prose lg:prose-xl mx-auto text-justify prose-invert">
         <slot />
       </div>
@@ -84,11 +84,3 @@ const { frontmatter } = Astro.props;
     </div>
   </div>
 </BaseLayout>
-
-<style>
-  .bg {
-    background-image: url("../assets/bg.png");
-    background-size: 96px;
-    background-repeat: repeat;
-  }
-</style>
