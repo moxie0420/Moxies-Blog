@@ -5,92 +5,90 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
+  <div
+    class="font-serif text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl flex flex-col gap-3 p-3"
+  >
     <div
-        class="font-serif text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl flex flex-col gap-3 p-3"
+      class="flex justify-between mx-auto gap-2 bg-milky-50 border-milky-100 border p-2 rounded-md w-3/4"
     >
-        <div
-            class="flex justify-between mx-auto gap-2 bg-milky-50 border-milky-100 border p-2 rounded-md w-3/4"
-        >
-            <Image
-                width="300"
-                height="259"
-                alt={frontmatter.image.alt}
-                src={frontmatter.image.url}
-                loading="eager"
-                class="font-bold text-7xl mx-auto font-sans rounded-md m-2 border-milky-100 border"
-                >{frontmatter.title}</Image
-            >
-            <div>
-                <h2 class="font-bold text-7xl p-5 font-sans">
-                    {frontmatter.title}
-                </h2>
-                <div class="w-fit mx-auto justify-between flex">
-                    <div class="text-start">
-                        <p>PLATFORM</p>
-                        <p>STACK WEBSITE</p>
-                        <p>GITHUB</p>
-                    </div>
+      <Image
+        width="300"
+        height="259"
+        alt={frontmatter.image.alt}
+        src={frontmatter.image.url}
+        loading="eager"
+        class="font-bold text-7xl mx-auto font-sans rounded-md m-2 border-milky-100 border"
+        >{frontmatter.title}</Image
+      >
+      <div>
+        <h2 class="font-bold text-7xl p-5 font-sans">
+          {frontmatter.title}
+        </h2>
+        <div class="w-fit mx-auto justify-between flex">
+          <div class="text-start">
+            <p>PLATFORM</p>
+            <p>STACK WEBSITE</p>
+            <p>GITHUB</p>
+          </div>
 
-                    <div class="text-end">
-                        <p>{frontmatter.platform}</p>
-                        <p>{frontmatter.stack}</p>
-                        <a href={frontmatter.github}>{frontmatter.github}</a>
-                    </div>
-                </div>
-            </div>
+          <div class="text-end">
+            <p>{frontmatter.platform}</p>
+            <p>{frontmatter.stack}</p>
+            <a href={frontmatter.github}>{frontmatter.github}</a>
+          </div>
         </div>
-
-        <div class="bg mx-auto my-auto border-2 rounded-sm grid gap-9 w-3/4">
-            <div
-                class="py-6 prose lg:prose-xl mx-auto text-justify prose-invert"
-            >
-                <slot />
-            </div>
-
-            <div class="grid">
-                <div class="w-fit mx-auto justify-between flex">
-                    <div class="text-start">
-                        <p>PLATFORM</p>
-                        <p>STACK</p>
-                        <p>GITHUB</p>
-                    </div>
-
-                    <div class="text-end">
-                        <p>{frontmatter.platform}</p>
-                        <p>{frontmatter.stack}</p>
-                        <a href={frontmatter.github}>{frontmatter.github}</a>
-                    </div>
-                </div>
-
-                <div class="mx-auto grid grid-cols-2 gap-5 p-5">
-                    <Image
-                        class="size-full rounded-md"
-                        width="500"
-                        height="281"
-                        src={frontmatter.worksImage1.url}
-                        alt={frontmatter.worksImage1.alt}
-                    />
-                    <Image
-                        class="size-full rounded-md"
-                        width="500"
-                        height="281"
-                        src={frontmatter.worksImage2.url}
-                        alt={frontmatter.worksImage2.alt}
-                    />
-                </div>
-                <p class="text-lg">
-                    I have no affiliation with mojang or minecraft or microsoft,
-                    just like how the block looks
-                </p>
-            </div>
-        </div>
+      </div>
     </div>
+
+    <div class="bg mx-auto my-auto border-2 rounded-sm grid gap-9 w-3/4">
+      <div class="py-6 prose lg:prose-xl mx-auto text-justify prose-invert">
+        <slot />
+      </div>
+
+      <div class="grid">
+        <div class="w-fit mx-auto justify-between flex">
+          <div class="text-start">
+            <p>PLATFORM</p>
+            <p>STACK</p>
+            <p>GITHUB</p>
+          </div>
+
+          <div class="text-end">
+            <p>{frontmatter.platform}</p>
+            <p>{frontmatter.stack}</p>
+            <a href={frontmatter.github}>{frontmatter.github}</a>
+          </div>
+        </div>
+
+        <div class="mx-auto grid grid-cols-2 gap-5 p-5">
+          <Image
+            class="size-full rounded-md"
+            width="500"
+            height="281"
+            src={frontmatter.worksImage1.url}
+            alt={frontmatter.worksImage1.alt}
+          />
+          <Image
+            class="size-full rounded-md"
+            width="500"
+            height="281"
+            src={frontmatter.worksImage2.url}
+            alt={frontmatter.worksImage2.alt}
+          />
+        </div>
+        <p class="text-lg">
+          I have no affiliation with mojang or minecraft or microsoft, just like
+          how the block looks
+        </p>
+      </div>
+    </div>
+  </div>
 </BaseLayout>
 
 <style>
-    .bg {
-        background-image: url("../assets/bg.png");
-        background-size: 96px;
-        background-repeat: repeat;
-    }
+  .bg {
+    background-image: url("../assets/bg.png");
+    background-size: 96px;
+    background-repeat: repeat;
+  }
 </style>

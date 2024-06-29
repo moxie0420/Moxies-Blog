@@ -6,11 +6,9 @@
       "@assets/*": ["src/assets/*"],
       "@components/*": ["src/components/*"],
       "@content/*": ["src/content/*"],
-      "@layouts/*": ["src/layouts/*"],
+      "@layouts/*": ["src/layouts/*"]
     },
-    "types": [
-      "@cloudflare/workers-types/2023-07-01"
-    ],
+    "types": ["@cloudflare/workers-types/2023-07-01"],
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   }

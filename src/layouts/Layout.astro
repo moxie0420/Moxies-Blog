@@ -13,24 +13,24 @@ const { pageTitle } = Astro.props;
 
 <!doctype html>
 <html transition:animate="none" lang="en" class="rounded-md">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="description" content="Astro description" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="generator" content={Astro.generator} />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{pageTitle}</title>
-        <ViewTransitions /> 
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Astro description" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <ViewTransitions />
+  </head>
 
-    <body class="flex flex-col sm:mx-auto p-3 sm:p-4 h-fit">
-        <Header />
-        <main
-            class="bg-milky-400 border-milky-100 border-2 text-milky-100 text-center h-full mt-5 rounded-md p-1"
-            transition:animate={fade({ duration: "0.2s" })}
-        >
-            <slot />
-        </main>
-        <Clouds />
-    </body>
+  <body class="flex flex-col sm:mx-auto p-3 sm:p-4 h-fit">
+    <Header />
+    <main
+      class="bg-milky-400 border-milky-100 border-2 text-milky-100 text-center h-full mt-5 rounded-md p-1"
+      transition:animate={fade({ duration: "0.2s" })}
+    >
+      <slot />
+    </main>
+    <Clouds />
+  </body>
 </html>

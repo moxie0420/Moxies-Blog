@@ -21,7 +21,7 @@ const postCollection = defineCollection({
     stack: z.string(),
     website: z.string(),
     github: z.string(),
-    date: z.date(),
+    date: z.string(),
   }),
 });
 
@@ -46,7 +46,7 @@ const projectsCollection = defineCollection({
     stack: z.string(),
     website: z.string(),
     github: z.string(),
-    date: z.date(),
+    date: z.string(),
   }),
 });
 
