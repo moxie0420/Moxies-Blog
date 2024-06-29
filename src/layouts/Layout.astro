@@ -20,13 +20,13 @@ const { pageTitle } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{pageTitle}</title>
-        <ViewTransitions />
+        <ViewTransitions /> 
     </head>
 
-    <body class="w-11/12 mx-auto p-5">
+    <body class="flex flex-col sm:mx-auto p-3 sm:p-4 h-fit">
         <Header />
         <main
-            class="bg-milky-400 border-milky-100 border-2 text-milky-100 text-center gap-5 h-screen mt-5 rounded-md"
+            class="bg-milky-400 border-milky-100 border-2 text-milky-100 text-center h-full mt-5 rounded-md p-1"
             transition:animate={fade({ duration: "0.2s" })}
         >
             <slot />

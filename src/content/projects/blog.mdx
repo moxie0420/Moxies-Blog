@@ -1,0 +1,91 @@
+---
+title: "The blog"
+description: "This Very websites starting Idea"
+image:
+  url: "https://content.moxiege.com/Projects%2Fthe_blog%2FHomepage.png"
+  alt: "My Blogs Homepage"
+worksImage1:
+  url: "https://content.moxiege.com/Projects%2Fthe_blog%2FScreenshot%202024-06-28%20at%2021-43-29%20.png"
+  alt: "Error 404"
+worksImage2:
+  url: "https://content.moxiege.com/Projects%2Fthe_blog%2FScreenshot%202024-06-28%20at%2021-46-01%20Works.png"
+  alt: "The Projects page"
+platform: Web
+stack: Astro, JavaScript, Tailwindcss, tsPartictles
+website: https://www.moxiege.com
+github: https://github.com/moxie0420/Moxies-Blog
+date: "2024-06-28"
+---
+
+import { Image } from "astro:assets";
+
+# Blogs
+
+## we have all tried them
+
+Whether it was that blog you made in middle school or a random side project most of us have made a blog.
+When I first made one it was a throwaway for a school project. It had no meaning to me and was forgotten.
+
+## Then why does this exist?
+
+I'm making this blog in the hopes of improving myself as a person.
+I hope to document my projects here and use this blog as a means of motivation.
+But I also want to make this a place where I can share my interest, whether it's a new piece of technology
+or just something new to me.
+
+# This website
+
+## The Beginnings
+
+this is my first project using Astro so I used a template made by [ttomczak3](https://github.com/ttomczak3)
+. The [Milky-Way template](https://github.com/ttomczak3/Milky-Way) provided an excellent base and inspiration.
+
+## The Customization
+
+My first move was custom particles using the [astro-particles](https://github.com/tsparticles/astro) library
+from there using the example from [the readme](https://github.com/tsparticles/astro#how-to-use)
+I tried to imitate snow using the original color palette and wound up using the following particle settings
+
+```json
+particles: {
+    color: {
+        value: "#fdebf3",
+    },
+    move: {
+        enable: true,
+        direction: "bottom",
+        outModes: "out",
+        speed: 2,
+    },
+    number: {
+        density: {
+            enable: true,
+            area: 800,
+        },
+        value: 400,
+    },
+    opacity: {
+        value: 0.7,
+    },
+    shape: {
+        type: "circle",
+    },
+    size: {
+        value: 10,
+    },
+    wobble: {
+        enable: true,
+        distance: 10,
+        speed: 10,
+    },
+    zIndex: {
+        value: { min: -1, max: 100 },
+    },
+};
+```
+
+the particles combined with some minor css changes allowed me to make the Homepage.
+To wrap things up I used tailwindcss to make the ui work across various screen sizes
+and to make things a bit more defined.
+
+<Image src={frontmatter.image.url} alt={frontmatter.image.alt} inferSize />

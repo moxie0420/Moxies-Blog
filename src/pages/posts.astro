@@ -28,7 +28,8 @@ const pageTitle = "Posts";
         {
             allPosts.map((card) => (
                 <Card
-                    url={`/posts/${card.slug}/`}
+                    url={`/projects/${card.slug}/`}
+                    alt={card.data.image.alt}
                     image={card.data.image.url}
                     title={card.data.title}
                     body={card.data.description}

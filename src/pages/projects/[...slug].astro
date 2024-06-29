@@ -12,7 +12,6 @@ const entry = await getEntry("projects", slug);
 if (entry === undefined) {
   return Astro.redirect("/404");
 }
-
 const { Content } = await entry.render();
 ---
 

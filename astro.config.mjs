@@ -13,7 +13,11 @@ import pageInsight from "astro-page-insight";
 export default defineConfig({
   site: "https://www.moxiege.com",
   output: "server",
+  image: {
+    domains: ["content.moxiege.com"]
+  },
   adapter: cloudflare({
+    imageService: "passthrough",
     platformProxy: {
       enabled: true
     }

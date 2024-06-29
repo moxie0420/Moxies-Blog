@@ -51,7 +51,6 @@ const options: ISourceOptions = {
     import {
         type Container,
         type Engine,
-        tsParticles,
     } from "tsparticles-engine";
     import { loadFull } from "tsparticles";
 
@@ -70,4 +69,4 @@ const options: ISourceOptions = {
     };
 </script>
 
-<Particles id="tsparticles" options={options} init="particlesInit" />
+<Particles id="tsparticles" options={options} init="particlesInit" class="isolate absolute"/>

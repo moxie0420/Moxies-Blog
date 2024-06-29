@@ -1,6 +1,5 @@
 {
     "remote.autoForwardPortsSource": "hybrid",
-    "[mdx]": {
-        "editor.defaultFormatter": "unifiedjs.vscode-mdx"
-    }
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
 }
