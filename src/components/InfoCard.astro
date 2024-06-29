@@ -1,0 +1,24 @@
+---
+interface Props {
+  platform: string;
+  stack: string;
+  github: string;
+}
+const { platform, stack, github } = Astro.props;
+---
+
+<div
+  class="w-fit mx-auto flex text-xs sm:text-sm md:text-md lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl"
+>
+  <div class="text-start">
+    <p>PLATFORM</p>
+    <p>STACK</p>
+    <p>GITHUB</p>
+  </div>
+
+  <div class="text-end">
+    <p>{platform}</p>
+    <p>{stack}</p>
+    <a href={github}>{github}</a>
+  </div>
+</div>

@@ -33,13 +33,12 @@
     "vscode": {
       "settings": {},
       "extensions": [
-        // select nix environment
         "mkhl.direnv",
-
-        // extra extensions
-        "circleci.circleci",
-        "dbaeumer.vscode-eslint",
-        "svipas.prettier-plus"
+        "esbenp.prettier-vscode",
+        "unifiedjs.vscode-mdx",
+        "tamasfe.even-better-toml",
+        "astro-build.astro-vscode",
+        "kamadorueda.alejandra"
       ]
     }
   },

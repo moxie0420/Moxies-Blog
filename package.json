@@ -28,6 +28,7 @@
     "astro": "^4.11.1",
     "astro-particles": "^2.10.0",
     "astro-robots-txt": "^1.0.0",
+    "astro-seo": "^0.8.4",
     "framer-motion": "^11.2.12",
     "i": "^0.3.7",
     "npm": "^10.8.1",

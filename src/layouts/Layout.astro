@@ -2,24 +2,49 @@
 import "@fontsource/pacifico";
 import "@fontsource-variable/josefin-sans";
 
+import { SEO } from "astro-seo";
+
 import { ViewTransitions } from "astro:transitions";
 import { fade } from "astro:transitions";
 
 import Header from "../components/Header.astro";
 import Clouds from "../components/Clouds.astro";
 
-const { pageTitle } = Astro.props;
+interface Props {
+  pageTitle?: string;
+  description?: string;
+  ogImg?: string;
+}
+
+const { pageTitle, description, ogImg } = Astro.props;
 ---
 
 <!doctype html>
 <html transition:animate="none" lang="en" class="rounded-md">
   <head>
-    <meta charset="utf-8" />
-    <meta name="description" content="Astro description" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{pageTitle}</title>
+    <SEO
+      title={pageTitle}
+      titleTemplate="%s - Moxie's Blog"
+      titleDefault="Moxie's Blog"
+      description={description ?? ""}
+      charset="utf-8"
+      openGraph={{
+        basic: {
+          title: pageTitle + " - " + description,
+          type: "website",
+          image: ogImg ?? "https://content.moxiege.com/public%2Fog.png",
+        },
+      }}
+      extend={{
+        // extending the default link tags
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        // extending the default meta tags
+        meta: [
+          { name: "generator", content: Astro.generator },
+          { name: "viewport", content: "width=device-width, initial-scale=1" },
+        ],
+      }}
+    />
     <ViewTransitions />
   </head>
 
@@ -31,7 +56,7 @@ const { pageTitle } = Astro.props;
     >
       <slot />
     </main>
-    
+
+    <Clouds />
   </body>
-  <Clouds />
 </html>

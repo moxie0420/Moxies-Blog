@@ -11,29 +11,32 @@ const pageTitle = "Posts";
 ---
 
 <Layout pageTitle={pageTitle}>
-    <Image
-        inferSize
-        alt="RaccoonLaptopGif"
-        src="https://content.moxiege.com/public%2Fblog.webp"
-        class="mx-auto"
-        loading="eager"
-    />
-    <h2
-        class="font-sans underline underline-offset-4 text-5xl decoration-milky-300 mb-10 font-bold"
-    >
-        Posts
-    </h2>
-    <div class="columns-3 gap-3 mx-auto break-after-column h-full">
-        {
-            allPosts.map((card) => (
-                <Card
-                    url={`/projects/${card.slug}/`}
-                    alt={card.data.image.alt}
-                    image={card.data.image.url}
-                    title={card.data.title}
-                    body={card.data.description}
-                />
-            ))
-        }
-    </div>
+  <Image
+    inferSize
+    alt="Raccoon Writing GIF"
+    src="https://content.moxiege.com/public%2Fblog.webp"
+    class="mx-auto"
+    loading="eager"
+  />
+  <h2
+    class="font-sans underline underline-offset-4 text-5xl decoration-milky-300 mb-10 font-bold"
+  >
+    Posts
+  </h2>
+
+  <div
+    class="sm:columns-2 lg:columns-3 gap-3 mx-auto break-after-column h-full p-5"
+  >
+    {
+      allPosts.map((card) => (
+        <Card
+          url={`/projects/${card.slug}/`}
+          alt={card.data.image.alt}
+          image={card.data.image.url}
+          title={card.data.title}
+          body={card.data.description}
+        />
+      ))
+    }
+  </div>
 </Layout>

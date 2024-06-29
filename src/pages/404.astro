@@ -4,11 +4,17 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-    <div class="flex flex-col mx-auto items-center text-xl font-serif gap-5 justify-between">
-        <Image inferSize alt="Raccoon404Gif" src="https://content.moxiege.com/public%2F404.webp" />
-        <h1 class="font-sans text-6xl">{description}</h1>
-        <p>It seems like you've wandered into the wrong forest!</p>
-        <a href="/">Return Home</a>
-    </div>
+<Layout pageTitle={description} description={description}>
+  <div
+    class="flex flex-col mx-auto items-center text-xl font-serif gap-5 justify-between"
+  >
+    <Image
+      inferSize
+      alt="Raccoon404Gif"
+      src="https://content.moxiege.com/public%2F404.webp"
+    />
+    <h1 class="font-sans text-6xl">{description}</h1>
+    <p>It seems like you've wandered into the wrong forest!</p>
+    <a href="/">Return Home</a>
+  </div>
 </Layout>

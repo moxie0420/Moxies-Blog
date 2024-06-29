@@ -14,7 +14,7 @@ export default defineConfig({
   site: "https://www.moxiege.com",
   output: "hybrid",
   image: {
-    domains: ["moxiege.com"],
+    domains: ["moxiege.com", "content.moxiege.com"],
   },
   adapter: cloudflare({
     imageService: "cloudflare",
