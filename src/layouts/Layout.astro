@@ -7,8 +7,9 @@ import { SEO } from "astro-seo";
 import { ViewTransitions } from "astro:transitions";
 import { fade } from "astro:transitions";
 
-import Header from "../components/Header.astro";
-import Clouds from "../components/Clouds.astro";
+import Header from "@components/Header.astro";
+import Clouds from "@components/Clouds.astro";
+import Kofi from "@components/kofi.astro";
 
 interface Props {
   pageTitle?: string;
@@ -56,7 +57,7 @@ const { pageTitle, description, ogImg } = Astro.props;
     >
       <slot />
     </main>
-
+    <footer class="flex flex-row justify-between mx-auto"></footer>
     <Clouds />
   </body>
 </html>

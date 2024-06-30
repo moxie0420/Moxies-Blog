@@ -1,0 +1,10 @@
+---
+import { Image } from "astro:assets";
+import kofi from "@assets/kofi_button_blue.webp";
+
+const { class: className, ...rest } = Astro.props;
+---
+
+<a href="https://ko-fi.com/W7W8ZWVFA" class="size-fit" transition:persist>
+  <Image src={kofi} alt="Support Me on Ko-Fi" class={className} {...rest} />
+</a>
