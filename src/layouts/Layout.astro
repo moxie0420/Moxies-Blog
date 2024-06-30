@@ -8,7 +8,7 @@ import { ViewTransitions } from "astro:transitions";
 import { fade } from "astro:transitions";
 
 import Header from "@components/Header.astro";
-import Clouds from "@components/Clouds.astro";
+import Clouds from "@components/Clouds";
 import Kofi from "@components/kofi.astro";
 
 interface Props {
@@ -21,7 +21,7 @@ const { pageTitle, description, ogImg } = Astro.props;
 ---
 
 <!doctype html>
-<html transition:animate="none" lang="en" class="rounded-md">
+<html transition:animate="none" lang="en" class="rounded-md bg-milky-50">
   <head>
     <SEO
       title={pageTitle}
@@ -57,7 +57,9 @@ const { pageTitle, description, ogImg } = Astro.props;
     >
       <slot />
     </main>
-    <footer class="flex flex-row justify-between mx-auto"></footer>
-    <Clouds />
+    <footer class="flex flex-row justify-between mx-auto">
+      <Kofi class="w-1/3 mx-auto" />
+    </footer>
+    <Clouds client:load />
   </body>
 </html>
