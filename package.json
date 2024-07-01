@@ -20,7 +20,7 @@
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/josefin-sans": "^5.0.21",
     "@fontsource/pacifico": "^5.0.13",
-    "@nextui-org/react": "^2.4.2",
+    "@nextui-org/button": "^2.0.34",
     "@playform/compress": "^0.0.13",
     "@playform/inline": "^0.0.7",
     "@tsparticles/basic": "^3.4.0",

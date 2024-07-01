@@ -41,6 +41,6 @@ export default defineConfig({
     playformCompress({
       Image: false,
     }),
-    compressor({ gzip: true, brotli: false }),
+    compressor({ gzip: false, brotli: true }),
   ],
 });

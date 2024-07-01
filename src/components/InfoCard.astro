@@ -19,6 +19,6 @@ const { platform, stack, github } = Astro.props;
   <div class="text-end">
     <p>{platform}</p>
     <p>{stack}</p>
-    <a href={github}>{github}</a>
+    <a href={github} class="text-nowrap">{github}</a>
   </div>
 </div>

@@ -1,21 +1,83 @@
 ---
 title: "The Ultimate OBS Studio setup"
 subtitle: "(At least for me)"
-description: "this is a test post for mdx"
+description: "A nessecity for streaming is obs, so im going to create a nix config for myself"
 image:
-  url: "https://content.moxiege.com/Projects%2Fthe_blog%2F404.webp"
-  alt: "No image yet"
+  url: https://content.moxiege.com/posts%2F2024-07-01-Obs%2Fobs_gaming.png
+  alt: "OBS Gaming scene"
 worksImage1:
-  url: "https://content.moxiege.com/Projects%2Fthe_blog%2F404.webp"
-  alt: "No image yet"
+  url: "https://content.moxiege.com/posts%2F2024-07-01-Obs%2Fdesktop.png"
+  alt: "obs desktop view"
 worksImage2:
-  url: "https://content.moxiege.com/Projects%2Fthe_blog%2F404.webp"
-  alt: "No image yet"
-platform: web
-stack: Astro, JavaScript
+  url: https://content.moxiege.com/posts%2F2024-07-01-Obs%2Fobs_gaming.png
+  alt: "OBS Gaming scene"
+platform: desktop
+stack: Nix
 website: "https://www.moxiege.com/"
-github: ""
+github: "https://gist.github.com/moxie0420/50b98c35529ee1b623a03442db5e2cb8"
 date: "2024-06-30"
 ---
 
-# this is a test post
+import { Image } from "astro:assets";
+
+# Streaming
+
+I used to stream as a hobby, and while I wasn't consistent it was fun.
+I would stream a lot of things, though my favorite was Minecraft. However,
+when I switched to Linux, I lost any streaming consistency.
+Back then Nvidia support was quite frankly terrible, there was little to no Wayland support
+and while proton worked, it hadn't yet received Battleye or Easy anti-cheat support.
+Though one good thing did exist, Nvfbc. Nvfbc is an API that captures the Linux desktop in an extremely efficient manner
+which allowed me to continue streaming despite being stuck on x11.
+
+## Wayland
+
+In the present, the Linux desktop environment has evolved. Nvidia now has reasonable support for Wayland,
+Proton is now capable of running most of my Steam library, and Compositors like Hyprland provide a beautiful
+Linux desktop experience. But despite the level of support, I have neglected streaming.
+
+# OBS Studio
+
+To start streaming again I need to setup OBS Studio, and I need to install and configure the following plugins:
+
+- VkCapture
+- WlrOBS
+- input-overlay
+- webkitgtk web source
+- obs-multi-rtmp
+
+## Installation
+
+Installation is straightforward thanks to home-manager.
+I can just add the following to my home configuration.
+
+```nix
+programs = {
+  obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+      wlrobs
+      input-overlay
+      obs-vkcapture
+      obs-webkitgtk
+      obs-multi-rtmp
+    ];
+  };
+};
+```
+
+## Setup and Config
+
+After launching I am greeted with the OBS welcome guide where I can change a few basic settings like canvas size,
+and framerate, and set basic streaming to services like Twitch, YouTube, and others. After OBS does its self setup
+we are left with a blank canvas.
+
+<Image
+  src="https://content.moxiege.com/posts%2F2024-07-01-Obs%2Fblank_canvas.png"
+  alt="blank obs canvas"
+  inferSize
+/>
+
+From Here I am going to create three scenes called desktop, in-game, and brb to serve as scenes for common activities
+because I haven't really set up my Twitch or YouTube these scenes will only contain basic desktop capture via Pipewire,
+game capture using obs-VkCapture, and a basic brb screen.
