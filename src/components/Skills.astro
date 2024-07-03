@@ -1,103 +1,18 @@
 ---
-import { Image } from "astro:assets";
-
-import bitbucket from "@assets/icons/bitbucket-original.svg"
-import c from "@assets/icons/c-original.svg"
-import cpp from "@assets/icons/cplusplus-original.svg"
-import csharp from "@assets/icons/csharp-original.svg"
-import css from "@assets/icons/css3-original.svg"
-import git from "@assets/icons/git-original.svg"
-import html from "@assets/icons/html5-original.svg"
-import js from "@assets/icons/javascript-original.svg"
-import next from "@assets/icons/nextjs-original.svg"
-import nixos from "@assets/icons/nixos-original.svg"
-import react from "@assets/icons/react-original.svg"
-import ts from "@assets/icons/typescript-original.svg"
+import { Icon } from "astro-icon/components";
 ---
 
 <div class="flex flex-wrap gap-1 m-2 mx-auto justify-center">
-    <Image
-        loading="eager"
-        width="46"
-        height="46"
-        alt="BitBucket"
-        src={bitbucket}
-    />
-    <Image
-        loading="eager"
-        width="46"
-        height="46"
-        alt="C"
-        src={c}
-    />
-    <Image
-        loading="eager"
-        width="46"
-        height="46"
-        alt="C Plus Plus"
-        src={cpp}
-    />
-    <Image
-        loading="eager"
-        width="46"
-        height="46"
-        alt="C#"
-        src={csharp}
-    />
-    <Image
-        loading="eager"
-        width="46"
-        height="46"
-        alt="CSS"
-        src={css}
-    />
-    <Image
-        loading="eager"
-        width="46"
-        height="46"
-        alt="Git"
-        src={git}
-    />
-    <Image
-        loading="eager"
-        width="46"
-        height="46"
-        alt="HTML"
-        src={html}
-    />
-    <Image
-        loading="eager"
-        width="46"
-        height="46"
-        alt="JavaScript"
-        src={js}
-    />
-    <Image
-        loading="eager"
-        width="46"
-        height="46"
-        alt="Next JS"
-        src={next}
-    />
-    <Image
-        loading="eager"
-        width="46"
-        height="46"
-        alt="NixOS"
-        src={nixos}
-    />
-    <Image
-        loading="eager"
-        width="46"
-        height="46"
-        alt="React JS"
-        src={react}
-    />
-    <Image
-        loading="eager"
-        width="46"
-        height="46"
-        alt="TypeScript"
-        src={ts}
-    />
+  <Icon name="bitbucket" size={64} />
+  <Icon name="c" size={64} />
+  <Icon name="cplusplus" size={64} />
+  <Icon name="csharp" size={64} />
+  <Icon name="css3" size={64} />
+  <Icon name="git" size={64} />
+  <Icon name="html5" size={64} />
+  <Icon name="javascript" size={64} />
+  <Icon name="nextjs" size={64} />
+  <Icon name="nixos" size={64} />
+  <Icon name="react" size={64} />
+  <Icon name="typescript" size={64} />
 </div>

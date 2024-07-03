@@ -1,11 +1,6 @@
 ---
-import "@fontsource/pacifico";
-import "@fontsource-variable/josefin-sans";
-
+import { Head } from "astro-capo";
 import { SEO } from "astro-seo";
-
-import { ViewTransitions } from "astro:transitions";
-import { fade } from "astro:transitions";
 
 import Header from "@components/Header.astro";
 import Clouds from "@components/Clouds";
@@ -22,7 +17,7 @@ const { pageTitle, description, ogImg } = Astro.props;
 
 <!doctype html>
 <html transition:animate="none" lang="en" class="rounded-md">
-  <head>
+  <Head>
     <SEO
       title={pageTitle}
       titleTemplate="%s - Moxie's Blog"
@@ -36,9 +31,30 @@ const { pageTitle, description, ogImg } = Astro.props;
           image: ogImg ?? "https://content.moxiege.com/public%2Fog.png",
         },
       }}
+      twitter={{
+        image: ogImg ?? "https://content.moxiege.com/public%2Fog.png",
+      }}
       extend={{
         // extending the default link tags
-        link: [{ rel: "icon", href: "/favicon.ico" }],
+        link: [
+          { rel: "sitemap", href: "/sitemap-index.xml" },
+          { rel: "icon", href: "/favicon.ico" },
+          { rel: "preconnect", href: "https://fonts.googleapis.com" },
+          {
+            rel: "preconnect",
+            href: "https://fonts.gstatic.com",
+            crossOrigin: "true",
+          },
+          {
+            rel: "preload",
+            href: "https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Pacifico&display=swap",
+            as: "style",
+          },
+          {
+            rel: "stylesheet",
+            href: "https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Pacifico&display=swap",
+          },
+        ],
         // extending the default meta tags
         meta: [
           { name: "generator", content: Astro.generator },
@@ -46,20 +62,18 @@ const { pageTitle, description, ogImg } = Astro.props;
         ],
       }}
     />
-    <ViewTransitions />
-  </head>
+  </Head>
 
   <body class="flex flex-col sm:mx-auto p-3 sm:p-4 gap-7">
     <Header />
     <main
       class="bg-milky-400 border-milky-100 border-2 text-milky-100 text-center p-2 rounded-md"
-      transition:animate={fade({ duration: "0.2s" })}
     >
       <slot />
     </main>
     <footer class="flex flex-row justify-between mx-auto">
       <Kofi class="w-1/3 mx-auto" />
     </footer>
-    <Clouds client:load />
+    <Clouds client:idle />
   </body>
 </html>

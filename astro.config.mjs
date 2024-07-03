@@ -7,8 +7,13 @@ import tailwind from "@astrojs/tailwind";
 import robotsTxt from "astro-robots-txt";
 import playformCompress from "@playform/compress";
 import playformInline from "@playform/inline";
-
 import compressor from "astro-compressor";
+import sitemap from "@astrojs/sitemap";
+import purgecss from "astro-purgecss";
+import swup from "@swup/astro";
+import icon from "astro-icon";
+
+import lighthouse from "astro-lighthouse";
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,6 +28,9 @@ export default defineConfig({
       enabled: true,
     },
   }),
+  experimental: {
+    directRenderScript: true,
+  },
   integrations: [
     react(),
     mdx({
@@ -36,11 +44,34 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: true,
     }),
+    swup({
+      accessibility: true,
+      progress: true,
+      smoothScrolling: true,
+    }),
     robotsTxt(),
     playformInline(),
     playformCompress({
       Image: false,
     }),
-    compressor({ gzip: false, brotli: true }),
+    compressor({
+      gzip: false,
+      brotli: true,
+    }),
+    sitemap(),
+    purgecss({
+      fontFace: true,
+      keyframes: false,
+      rejected: true,
+      extractors: [
+        {
+          extractor: (content) =>
+            content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || [],
+          extensions: ["astro", "html"],
+        },
+      ],
+    }),
+    icon(),
+    lighthouse(),
   ],
 });

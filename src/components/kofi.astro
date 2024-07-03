@@ -6,5 +6,12 @@ const { class: className, ...rest } = Astro.props;
 ---
 
 <a href="https://ko-fi.com/W7W8ZWVFA" class="size-fit" transition:persist>
-  <Image src={kofi} alt="Support Me on Ko-Fi" class={className} {...rest} />
+  <Image
+    loading="eager"
+    src={kofi}
+    alt="Support Me on Ko-Fi"
+    class={className}
+    {...rest}
+    densities={[0.5, 1.0, 1.5, 2.0]}
+  />
 </a>

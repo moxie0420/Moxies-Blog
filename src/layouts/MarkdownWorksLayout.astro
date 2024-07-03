@@ -17,10 +17,11 @@ const { frontmatter } = Astro.props;
       class="flex flex-col sm:flex-row bg-milky-50 border-milky-100 border p-2 rounded-md gap-2"
     >
       <Image
-        inferSize
+        width="1920"
+        height="1080"
+        densities={[0.25, 0.5, 1.0, 1.5, 2.0]}
         alt={frontmatter.image.alt}
         src={frontmatter.image.url}
-        loading="eager"
         class="font-bold 3xl:text-7xl m-auto font-sans rounded-md border-milky-100 border size-1/2"
         >{frontmatter.title}</Image
       >
@@ -61,6 +62,7 @@ const { frontmatter } = Astro.props;
         />
         <div class="mx-auto grid grid-cols-2 gap-5 p-5">
           <Image
+            densities={[0.5, 1.0, 1.5, 2.0]}
             class="size-full rounded-md"
             width="500"
             height="281"
@@ -68,6 +70,7 @@ const { frontmatter } = Astro.props;
             alt={frontmatter.worksImage1.alt}
           />
           <Image
+            densities={[0.5, 1.0, 1.5, 2.0]}
             class="size-full rounded-md"
             width="500"
             height="281"

@@ -1,4 +1,4 @@
-const { nextui } = require("@nextui-org/react");
+const { nextui } = require("@nextui-org/theme");
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -21,8 +21,8 @@ export default {
         },
       },
       fontFamily: {
-        sans: ["pacifico"],
-        serif: ["Josefin Sans Variable"],
+        sans: ["Pacifico", "cursive"],
+        serif: ["Josefin", "Sans", "Variable", "sans-serif"],
       },
     },
   },
