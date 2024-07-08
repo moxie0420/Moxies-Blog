@@ -4,5 +4,22 @@
   "editor.formatOnSave": true,
   "[astro]": {
     "editor.defaultFormatter": "astro-build.astro-vscode"
-  }
+  },
+  "cSpell.words": [
+    "astrojs",
+    "codespaces",
+    "devcontainers",
+    "direnv",
+    "esbenp",
+    "kamadorueda",
+    "mkhl",
+    "partytown",
+    "playform",
+    "purgecss",
+    "swup",
+    "tailwindcss",
+    "tamasfe",
+    "typegen",
+    "unifiedjs"
+  ]
 }

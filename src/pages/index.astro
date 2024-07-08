@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import { Button } from "@nextui-org/button";
+import Button from "@components/Button.astro";
+
 import Skills from "@components/Skills.astro";
 import Layout from "@layouts/Layout.astro";
 
@@ -28,10 +29,11 @@ const Description = "My Portfolio and Blog";
 
       <Image
         loading="eager"
-        inferSize
+        width={300}
+        height={259}
         alt="RaccoonSpaceGif"
         src="https://content.moxiege.com/public%2Fspace.webp"
-        densities={[0.5, 1.0, 1.5, 2.0]}
+        densities={[0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]}
         class="mx-auto"
       />
     </div>
@@ -52,15 +54,7 @@ const Description = "My Portfolio and Blog";
       portfolio to check my progress
     </p>
 
-    <a href="/works/">
-      <Button
-        className="border-milky-200 text-milky-100 bg-milky-300"
-        variant="bordered"
-        size="lg"
-      >
-        My portfolio
-      </Button>
-    </a>
+    <Button href="/works" size="lg">My portfolio</Button>
 
     <h2
       class="font-sans underline underline-offset-4 text-4xl lg:text-5xl mx-auto decoration-milky-300"

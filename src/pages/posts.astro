@@ -1,9 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-
 import Card from "@components/Card.astro";
-
 import Layout from "@layouts/Layout.astro";
 
 const allPosts = await getCollection("posts");
@@ -12,7 +10,9 @@ const pageTitle = "Posts";
 
 <Layout pageTitle={pageTitle}>
   <Image
-    inferSize
+    width={300}
+    height={259}
+    densities={[0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]}
     alt="Raccoon Writing GIF"
     src="https://content.moxiege.com/public%2Fblog.webp"
     class="mx-auto"

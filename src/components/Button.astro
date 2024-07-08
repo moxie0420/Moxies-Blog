@@ -1,0 +1,26 @@
+---
+interface Props {
+  href?: string | URL;
+  size?: "sm" | "md" | "lg";
+}
+const { href, size } = Astro.props;
+
+const style = () => {
+  switch (size) {
+    case "lg":
+      return "border-milky-200 border text-milky-100 bg-milky-300 p-6 rounded-lg text-2xl";
+    case "md":
+      return "border-milky-200 border text-milky-100 bg-milky-300 p-4 rounded-lg text-lg";
+    case "sm":
+      return "border-milky-200 border text-milky-100 bg-milky-300 p-2 rounded-lg";
+    default:
+      return "border-milky-200 border text-milky-100 bg-milky-300 p-2 rounded-lg";
+  }
+};
+---
+
+<a href={href}>
+  <button type="button" class={style()}>
+    <slot />
+  </button>
+</a>

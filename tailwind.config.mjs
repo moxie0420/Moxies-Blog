@@ -1,11 +1,6 @@
-const { nextui } = require("@nextui-org/theme");
-
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
       backgroundImage: {
@@ -27,5 +22,5 @@ export default {
     },
   },
   darkMode: "class",
-  plugins: [nextui(), require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography")],
 };

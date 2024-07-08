@@ -18,7 +18,7 @@ const postCollection = defineCollection({
     stack: z.string(),
     website: z.string(),
     github: z.string(),
-    date: z.string(),
+    date: z.date(),
   }),
 });
 

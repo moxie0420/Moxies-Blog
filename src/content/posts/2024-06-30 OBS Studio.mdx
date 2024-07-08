@@ -15,7 +15,7 @@ platform: desktop
 stack: Nix
 website: "https://www.moxiege.com/"
 github: "https://gist.github.com/moxie0420/50b98c35529ee1b623a03442db5e2cb8"
-date: "2024-06-30"
+date: 2024-06-30
 ---
 
 import { Image } from "astro:assets";
@@ -73,10 +73,11 @@ and framerate, and set basic streaming to services like Twitch, YouTube, and oth
 we are left with a blank canvas.
 
 <Image
+  loading="lazy"
   src="https://content.moxiege.com/posts%2F2024-07-01-Obs%2Fblank_canvas.png"
   alt="blank obs canvas"
   inferSize
-  densities={[0.5, 1.0, 1.5, 2.0]}
+  densities={[0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]}
 />
 
 From Here I am going to create three scenes called desktop, in-game, and brb to serve as scenes for common activities

@@ -1,9 +1,8 @@
 ---
-import { Head } from "astro-capo";
 import { SEO } from "astro-seo";
 
 import Header from "@components/Header.astro";
-import Clouds from "@components/Clouds";
+import Particles from "@components/particles.astro";
 import Kofi from "@components/kofi.astro";
 
 interface Props {
@@ -17,7 +16,7 @@ const { pageTitle, description, ogImg } = Astro.props;
 
 <!doctype html>
 <html transition:animate="none" lang="en" class="rounded-md">
-  <Head>
+  <head>
     <SEO
       title={pageTitle}
       titleTemplate="%s - Moxie's Blog"
@@ -32,13 +31,16 @@ const { pageTitle, description, ogImg } = Astro.props;
         },
       }}
       twitter={{
+        title: pageTitle,
+        description: description,
         image: ogImg ?? "https://content.moxiege.com/public%2Fog.png",
+        site: Astro.site?.toString(),
       }}
       extend={{
         // extending the default link tags
         link: [
           { rel: "sitemap", href: "/sitemap-index.xml" },
-          { rel: "icon", href: "/favicon.ico" },
+          { rel: "icon", href: "/favicon.svg" },
           { rel: "preconnect", href: "https://fonts.googleapis.com" },
           {
             rel: "preconnect",
@@ -54,6 +56,12 @@ const { pageTitle, description, ogImg } = Astro.props;
             rel: "stylesheet",
             href: "https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Pacifico&display=swap",
           },
+          {
+            rel: "alternate",
+            type: "application/rss+xml",
+            title: "Moxie's Blog",
+            href: new URL("feed.xml", Astro.site).toString(),
+          },
         ],
         // extending the default meta tags
         meta: [
@@ -62,7 +70,8 @@ const { pageTitle, description, ogImg } = Astro.props;
         ],
       }}
     />
-  </Head>
+    <Particles />
+  </head>
 
   <body class="flex flex-col sm:mx-auto p-3 sm:p-4 gap-7">
     <Header />
@@ -74,6 +83,5 @@ const { pageTitle, description, ogImg } = Astro.props;
     <footer class="flex flex-row justify-between mx-auto">
       <Kofi class="w-1/3 mx-auto" />
     </footer>
-    <Clouds client:idle />
   </body>
 </html>

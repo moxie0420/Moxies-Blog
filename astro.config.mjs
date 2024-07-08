@@ -1,8 +1,6 @@
 import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
-import react from "@astrojs/react";
 import mdx from "@astrojs/mdx";
-import remarkToc from "remark-toc";
 import tailwind from "@astrojs/tailwind";
 import robotsTxt from "astro-robots-txt";
 import playformCompress from "@playform/compress";
@@ -12,8 +10,9 @@ import sitemap from "@astrojs/sitemap";
 import purgecss from "astro-purgecss";
 import swup from "@swup/astro";
 import icon from "astro-icon";
-
-import lighthouse from "astro-lighthouse";
+import playformFormat from "@playform/format";
+import devtoolBreakpoints from "astro-devtool-breakpoints";
+import metaTags from "astro-meta-tags";
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,14 +31,12 @@ export default defineConfig({
     directRenderScript: true,
   },
   integrations: [
-    react(),
+    icon(),
     mdx({
       syntaxHighlight: "shiki",
       shikiConfig: {
         theme: "catppuccin-mocha",
       },
-      remarkPlugins: [remarkToc],
-      gfm: false,
     }),
     tailwind({
       applyBaseStyles: true,
@@ -49,15 +46,9 @@ export default defineConfig({
       progress: true,
       smoothScrolling: true,
     }),
-    robotsTxt(),
+    playformFormat(),
     playformInline(),
-    playformCompress({
-      Image: false,
-    }),
-    compressor({
-      gzip: false,
-      brotli: true,
-    }),
+    robotsTxt(),
     sitemap(),
     purgecss({
       fontFace: true,
@@ -71,7 +62,11 @@ export default defineConfig({
         },
       ],
     }),
-    icon(),
-    lighthouse(),
+    playformCompress({
+      Image: false,
+    }),
+    compressor(),
+    devtoolBreakpoints(),
+    metaTags(),
   ],
 });

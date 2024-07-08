@@ -17,6 +17,7 @@ const { frontmatter } = Astro.props;
       class="flex flex-col sm:flex-row bg-milky-50 border-milky-100 border p-2 rounded-md gap-2"
     >
       <Image
+        loading="eager"
         width="1920"
         height="1080"
         densities={[0.25, 0.5, 1.0, 1.5, 2.0]}
@@ -32,11 +33,15 @@ const { frontmatter } = Astro.props;
         >
           {frontmatter.title}
         </h2>
-        <h2
-          class="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl 3xl:text-6xl"
-        >
-          {frontmatter.subtitle}
-        </h2>
+
+        {
+          frontmatter.subtitle ? (
+            <h2 class="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl 3xl:text-6xl">
+              {frontmatter.subtitle ?? " "}
+            </h2>
+          ) : null
+        }
+
         <InfoCard
           platform={frontmatter.platform}
           stack={frontmatter.stack}
@@ -62,6 +67,7 @@ const { frontmatter } = Astro.props;
         />
         <div class="mx-auto grid grid-cols-2 gap-5 p-5">
           <Image
+            loading="lazy"
             densities={[0.5, 1.0, 1.5, 2.0]}
             class="size-full rounded-md"
             width="500"
@@ -70,6 +76,7 @@ const { frontmatter } = Astro.props;
             alt={frontmatter.worksImage1.alt}
           />
           <Image
+            loading="lazy"
             densities={[0.5, 1.0, 1.5, 2.0]}
             class="size-full rounded-md"
             width="500"
