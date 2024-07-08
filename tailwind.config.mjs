@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        obsidian: "url('/src/assets/bg.png')",
+        obsidian: "url('/src/assets/bg.webp')",
       },
       colors: {
         milky: {

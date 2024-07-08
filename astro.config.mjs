@@ -14,6 +14,8 @@ import playformFormat from "@playform/format";
 import devtoolBreakpoints from "astro-devtool-breakpoints";
 import metaTags from "astro-meta-tags";
 
+import partytown from "@astrojs/partytown";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.moxiege.com",
@@ -27,9 +29,6 @@ export default defineConfig({
       enabled: true,
     },
   }),
-  experimental: {
-    directRenderScript: true,
-  },
   integrations: [
     icon(),
     mdx({
@@ -62,11 +61,10 @@ export default defineConfig({
         },
       ],
     }),
-    playformCompress({
-      Image: false,
-    }),
+    playformCompress(),
     compressor(),
     devtoolBreakpoints(),
     metaTags(),
+    partytown(),
   ],
 });
