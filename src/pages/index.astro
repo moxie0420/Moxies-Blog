@@ -14,8 +14,10 @@ const Description = "My Portfolio and Blog";
   description={Description}
   ogImg="https://content.moxiege.com/public%2Fog.png"
 >
-  <div class="grid gap-2 sm:gap-3 lg:gap-4">
-    <div class="grid sm:grid-cols-2 font-serif mx-auto content-center">
+  <div class="grid gap-4 w-2/3 mx-auto">
+    <div
+      class="grid sm:grid-cols-2 font-serif mx-auto content-center backdrop-blur-lg rounded-lg border border-milky-400 p-3 w-full"
+    >
       <div class="mx-auto content-center">
         <h1 class="font-sans mb-2 text-xl sm:text-5xl lg:text-6xl">
           Moxie Benavides
@@ -39,45 +41,56 @@ const Description = "My Portfolio and Blog";
       />
     </div>
 
-    <h2
-      class="font-sans underline underline-offset-4 text-4xl lg:text-5xl decoration-milky-300"
+    <div
+      class="backdrop-blur-lg rounded-lg border border-milky-400 p-3 mx-auto grid gap-3"
     >
-      About Me
-    </h2>
+      <h2
+        class="font-sans underline underline-offset-4 text-4xl lg:text-5xl decoration-milky-300"
+      >
+        About Me
+      </h2>
 
-    <p
-      class="text-xl lg:text-3xl 2xl:text-4xl text-balance sm:w-3/4 3xl:w-1/2 mx-auto font-serif"
+      <p
+        class="text-xl lg:text-3xl 2xl:text-4xl text-balance mx-auto font-serif"
+      >
+        Howdy, y'all, my name is Moxie, and I'm a College student at UTSA
+        studying Cyber Security. I plan to use this website to talk about my
+        projects and whatever else catches my interest. While I've just started
+        my progress, I hope to make this the first in many projects. Feel free
+        to check my portfolio to check my progress
+      </p>
+      <Button href="/works" size="lg">My portfolio</Button>
+    </div>
+
+    <div
+      class="backdrop-blur-lg rounded-lg border border-milky-400 p-3 mx-auto"
     >
-      Howdy, y'all, my name is Moxie, and I'm a College student at UTSA studying
-      Cyber Security. I plan to use this website to talk about my projects and
-      whatever else catches my interest. While I've just started my progress, I
-      hope to make this the first in many projects. Feel free to check my
-      portfolio to check my progress
-    </p>
+      <h2
+        class="font-sans underline underline-offset-4 text-4xl lg:text-5xl mx-auto decoration-milky-300"
+      >
+        Skills
+      </h2>
 
-    <Button href="/works" size="lg">My portfolio</Button>
+      <Skills />
+    </div>
 
-    <h2
-      class="font-sans underline underline-offset-4 text-4xl lg:text-5xl mx-auto decoration-milky-300"
+    <div
+      class="backdrop-blur-lg rounded-lg border border-milky-400 p-3 mx-auto"
     >
-      Skills
-    </h2>
+      <h2
+        class="font-sans underline underline-offset-4 text-4xl lg:text-5xl mb-2 decoration-milky-300"
+      >
+        Interests
+      </h2>
 
-    <Skills />
-
-    <h2
-      class="font-sans underline underline-offset-4 text-4xl lg:text-5xl mb-2 decoration-milky-300"
-    >
-      Interests
-    </h2>
-
-    <p
-      class="text-xl lg:text-3xl 2xl:text-4xl text-balance sm:w-2/3 3xl:w-1/2 mx-auto font-serif"
-    >
-      I'm Primarily interested in Computer programming and video games. My
-      favorite games include A Hat in Time, Cyberpunk 2077, Deadcells, and Risk
-      of Rain 2. I am also currently in the process of making a game. As
-      development progresses I will post updates
-    </p>
+      <p
+        class="text-xl lg:text-3xl 2xl:text-4xl text-balance mx-auto font-serif"
+      >
+        I'm Primarily interested in Computer programming and video games. My
+        favorite games include A Hat in Time, Cyberpunk 2077, Deadcells, and
+        Risk of Rain 2. I am also currently in the process of making a game. As
+        development progresses I will post updates
+      </p>
+    </div>
   </div>
 </Layout>

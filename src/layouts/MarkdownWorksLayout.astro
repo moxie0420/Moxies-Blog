@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 import BaseLayout from "./Layout.astro";
 import InfoCard from "@components/InfoCard.astro";
+import Button from "@components/Button.astro";
+import { Icon } from "astro-icon/components";
 const { frontmatter } = Astro.props;
 ---
 
@@ -51,15 +53,33 @@ const { frontmatter } = Astro.props;
     </div>
 
     <div
-      class="bg-obsidian bg-[64px] bg-repeat m-auto border rounded-md grid gap-5 py-5 w-full"
+      class="mx-auto rounded-md grid gap-5 p-3 w-fit border border-milky-400 backdrop-blur-lg"
     >
       <div
-        class="prose lg:prose-xl 2xl:prose-xl 3xl:prose-2xl mx-auto text-justify prose-invert"
+        class="prose lg:prose-xl 2xl:prose-xl 3xl:prose-2xl mx-auto text-justify prose-invert p-4"
       >
         <slot />
       </div>
 
-      <div class="grid">
+      <div class="grid gap-2">
+        <div class="w-1/2 justify-between flex mx-auto size-full pb-2">
+          {
+            frontmatter.prev ? (
+              <Button href={frontmatter.prev || undefined}>
+                <Icon name="Arrow_Left" slot="before" />
+                Previous
+              </Button>
+            ) : undefined
+          }
+          {
+            frontmatter.next ? (
+              <Button href={frontmatter.next || undefined}>
+                <Icon name="Arrow" slot="after" />
+                <p class="px-5 mx-auto">Next</p>
+              </Button>
+            ) : undefined
+          }
+        </div>
         <InfoCard
           platform={frontmatter.platform}
           stack={frontmatter.stack}

@@ -39,7 +39,6 @@
         "tamasfe.even-better-toml",
         "astro-build.astro-vscode",
         "kamadorueda.alejandra",
-        "million.million-lint",
         "bradlc.vscode-tailwindcss"
       ]
     }

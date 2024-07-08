@@ -75,11 +75,10 @@ const { pageTitle, description, ogImg } = Astro.props;
 
   <body class="flex flex-col sm:mx-auto p-3 sm:p-4 gap-7">
     <Header />
-    <main
-      class="bg-milky-400 border-milky-100 border-2 text-milky-100 text-center p-2 rounded-md"
-    >
+    <main class="text-milky-100 text-center p-2">
       <slot />
     </main>
+
     <footer class="flex flex-row justify-between mx-auto">
       <Kofi class="w-1/3 mx-auto" />
     </footer>

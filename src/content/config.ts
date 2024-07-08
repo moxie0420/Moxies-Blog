@@ -5,7 +5,7 @@ const image = z.object({
   alt: z.string(),
 });
 
-const postCollection = defineCollection({
+const Generic = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
@@ -19,35 +19,12 @@ const postCollection = defineCollection({
     website: z.string(),
     github: z.string(),
     date: z.date(),
-  }),
-});
-
-const projectsCollection = defineCollection({
-  type: "content",
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    image: z.object({
-      url: z.string(),
-      alt: z.string(),
-    }),
-    worksImage1: z.object({
-      url: z.string(),
-      alt: z.string(),
-    }),
-    worksImage2: z.object({
-      url: z.string(),
-      alt: z.string(),
-    }),
-    platform: z.string(),
-    stack: z.string(),
-    website: z.string(),
-    github: z.string(),
-    date: z.string(),
+    prev: z.string().optional(),
+    next: z.string().optional(),
   }),
 });
 
 export const collections = {
-  projects: projectsCollection,
-  posts: postCollection,
+  projects: Generic,
+  posts: Generic,
 };

@@ -8,19 +8,27 @@ const { href, size } = Astro.props;
 const style = () => {
   switch (size) {
     case "lg":
-      return "border-milky-200 border text-milky-100 bg-milky-300 p-6 rounded-lg text-2xl";
+      return "p-6 rounded-lg text-2xl";
     case "md":
-      return "border-milky-200 border text-milky-100 bg-milky-300 p-4 rounded-lg text-lg";
+      return "p-4 rounded-lg text-lg";
     case "sm":
-      return "border-milky-200 border text-milky-100 bg-milky-300 p-2 rounded-lg";
+      return "p-2 rounded-lg";
     default:
-      return "border-milky-200 border text-milky-100 bg-milky-300 p-2 rounded-lg";
+      return "p-2 rounded-lg";
   }
 };
 ---
 
-<a href={href}>
-  <button type="button" class={style()}>
+<a href={href} class="mx-auto">
+  <button
+    type="button"
+    class:list={[
+      style(),
+      "border-milky-200 border text-milky-100 bg-milky-300 flex gap-2",
+    ]}
+  >
+    <slot name="before" />
     <slot />
+    <slot name="after" />
   </button>
 </a>

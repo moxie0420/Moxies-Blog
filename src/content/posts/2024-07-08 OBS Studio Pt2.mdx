@@ -1,0 +1,50 @@
+---
+title: "My Basic OBS Studio setup Pt 2"
+subtitle: "Adding Visuals and extra customization"
+description: "Continuing from the previous post ill be adding aditional customizations to OBS and setting up the rest of my streaming environment"
+image:
+  url: https://content.moxiege.com/posts%2F2024-07-08-OBS-2%2Fvsf-main.png
+  alt: "VSeeFace streaming UI"
+worksImage1:
+  url: "https://content.moxiege.com/posts%2F2024-07-01-Obs%2Fdesktop.png"
+  alt: "obs desktop view"
+worksImage2:
+  url: https://content.moxiege.com/posts%2F2024-07-01-Obs%2Fobs_gaming.png
+  alt: "OBS Gaming scene"
+platform: desktop
+stack: Nix, VSeeFace, .VRM
+website: "https://www.moxiege.com/"
+github: "https://gist.github.com/moxie0420/50b98c35529ee1b623a03442db5e2cb8"
+date: 2024-07-08
+prev: "/posts/2024-06-30-obs-studio/"
+---
+
+import { Image } from "astro:assets";
+
+# Continuing the setup
+
+If you haven't Read the [first part](/posts/2024-06-30-obs-studio/) I would suggest you take a quick peek.
+
+## Vtubing
+
+In order to use my vtuber model i needed to setup a tool called VSeeFace,
+thankfully this can be done via lutris.
+Once Installed and launched you can select an avatar or import one.
+
+<Image
+  loading="lazy"
+  src="https://content.moxiege.com/posts%2F2024-07-08-OBS-2%2Fveeseeface.png"
+  alt="blank obs canvas"
+  inferSize
+  densities={[0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]}
+/>
+
+from there VSeeFace handles tracking via your computers webcam, camera, or connected phone
+
+<Image
+  loading="lazy"
+  src="https://content.moxiege.com/posts%2F2024-07-08-OBS-2%2Fvsf-main.png"
+  alt="blank obs canvas"
+  inferSize
+  densities={[0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0]}
+/>
