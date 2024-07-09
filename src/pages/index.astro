@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import Button from "@components/Button.astro";
 
+import Button from "@components/Button.astro";
 import Skills from "@components/Skills.astro";
+
 import Layout from "@layouts/Layout.astro";
 
 const pageTitle = "Home";
@@ -16,7 +17,7 @@ const Description = "My Portfolio and Blog";
 >
   <div class="grid gap-4 w-2/3 mx-auto">
     <div
-      class="grid sm:grid-cols-2 font-serif mx-auto content-center backdrop-blur-lg rounded-lg border border-milky-400 p-3 w-full"
+      class="grid sm:grid-cols-2 font-serif mx-auto content-center backdrop-blur-xl rounded-lg border border-milky-400 p-3 w-full"
     >
       <div class="mx-auto content-center">
         <h1 class="font-sans mb-2 text-xl sm:text-5xl lg:text-6xl">
@@ -42,7 +43,7 @@ const Description = "My Portfolio and Blog";
     </div>
 
     <div
-      class="backdrop-blur-lg rounded-lg border border-milky-400 p-3 mx-auto grid gap-3"
+      class="backdrop-blur-xl rounded-lg border border-milky-400 p-3 mx-auto grid gap-4"
     >
       <h2
         class="font-sans underline underline-offset-4 text-4xl lg:text-5xl decoration-milky-300"
@@ -60,11 +61,6 @@ const Description = "My Portfolio and Blog";
         to check my portfolio to check my progress
       </p>
       <Button href="/works" size="lg">My portfolio</Button>
-    </div>
-
-    <div
-      class="backdrop-blur-lg rounded-lg border border-milky-400 p-3 mx-auto"
-    >
       <h2
         class="font-sans underline underline-offset-4 text-4xl lg:text-5xl mx-auto decoration-milky-300"
       >
@@ -72,11 +68,6 @@ const Description = "My Portfolio and Blog";
       </h2>
 
       <Skills />
-    </div>
-
-    <div
-      class="backdrop-blur-lg rounded-lg border border-milky-400 p-3 mx-auto"
-    >
       <h2
         class="font-sans underline underline-offset-4 text-4xl lg:text-5xl mb-2 decoration-milky-300"
       >

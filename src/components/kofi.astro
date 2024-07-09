@@ -3,13 +3,10 @@ import { Image } from "astro:assets";
 import kofi from "@assets/kofi_button_blue.webp";
 
 const { class: className, ...rest } = Astro.props;
-const path = Astro.url.pathname;
-const loading = path === "/" || "/works" || "/posts" ? "eager" : "lazy";
 ---
 
 <a href="https://ko-fi.com/W7W8ZWVFA" class="size-fit" transition:persist>
   <Image
-    loading={loading}
     src={kofi}
     alt="Support Me on Ko-Fi"
     class={className}

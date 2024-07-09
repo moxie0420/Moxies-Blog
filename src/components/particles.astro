@@ -3,11 +3,13 @@
   import { loadBaseMover } from "@tsparticles/move-base";
   import { loadCircleShape } from "@tsparticles/shape-circle";
   import { loadColorUpdater } from "@tsparticles/updater-color";
+  import { loadOutModesUpdater } from "@tsparticles/updater-out-modes";
 
   await Promise.all([
     loadColorUpdater(tsParticles),
     loadBaseMover(tsParticles),
     loadCircleShape(tsParticles),
+    loadOutModesUpdater(tsParticles),
   ]);
   await tsParticles.load({
     id: "tsparticles",
