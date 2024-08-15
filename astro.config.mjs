@@ -9,12 +9,12 @@ import compressor from "astro-compressor";
 import sitemap from "@astrojs/sitemap";
 import purgecss from "astro-purgecss";
 import swup from "@swup/astro";
-import icon from "astro-icon";
 import playformFormat from "@playform/format";
 import devtoolBreakpoints from "astro-devtool-breakpoints";
 import metaTags from "astro-meta-tags";
-
 import partytown from "@astrojs/partytown";
+
+import icon from "astro-icon";
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,7 +30,6 @@ export default defineConfig({
     },
   }),
   integrations: [
-    icon(),
     mdx({
       syntaxHighlight: "shiki",
       shikiConfig: {
@@ -66,5 +65,6 @@ export default defineConfig({
     devtoolBreakpoints(),
     metaTags(),
     partytown(),
+    icon(),
   ],
 });
