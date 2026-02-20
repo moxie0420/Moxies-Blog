@@ -13,16 +13,16 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.7.0",
-    "@astrojs/cloudflare": "^11.0.1",
+    "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/mdx": "^3.1.2",
     "@astrojs/partytown": "^2.1.1",
-    "@astrojs/rss": "^4.0.7",
+    "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/tailwind": "^5.1.0",
     "@playform/compress": "^0.0.13",
     "@playform/format": "^0.0.7",
     "@playform/inline": "^0.0.7",
-    "@sentry/astro": "^8.15.0",
+    "@sentry/astro": "^10.39.0",
     "@spotlightjs/astro": "^2.0.0",
     "@swup/astro": "^1.4.1",
     "@tsparticles/basic": "^3.4.0",
@@ -32,10 +32,10 @@
     "@tsparticles/updater-opacity": "^3.5.0",
     "@tsparticles/updater-out-modes": "^3.5.0",
     "@tsparticles/updater-size": "^3.5.0",
-    "astro": "^4.11.1",
+    "astro": "^5.15.9",
     "astro-compressor": "^0.4.1",
     "astro-devtool-breakpoints": "^0.3.0",
-    "astro-icon": "^1.1.0",
+    "astro-icon": "^1.1.5",
     "astro-meta-tags": "^0.3.0",
     "astro-purgecss": "^4.1.1",
     "astro-robots-txt": "^1.0.0",
@@ -49,6 +49,6 @@
     "@tailwindcss/typography": "^0.5.13",
     "prettier": "^3.3.2",
     "prettier-plugin-astro": "^0.14.0",
-    "wrangler": "^3.62.0"
+    "wrangler": "^4.67.0"
   }
 }
